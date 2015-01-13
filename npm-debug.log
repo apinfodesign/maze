@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json pcs5b@1.0.0 No repository field.
+5 warn package.json pcs5b@1.0.0 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git',
+7 verbose cache add   null ]
+8 verbose cache add name=undefined spec="git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git" args=["git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git",null]
+9 verbose parsed url { protocol: 'git+ssh:',
+9 verbose parsed url   slashes: true,
+9 verbose parsed url   auth: 'git',
+9 verbose parsed url   host: 'github.com',
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: 'github.com',
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '/:portlandcodeschool/jsi-gamelib.git',
+9 verbose parsed url   path: '/:portlandcodeschool/jsi-gamelib.git',
+9 verbose parsed url   href: 'git+ssh://git@github.com/:portlandcodeschool/jsi-gamelib.git' }
+10 silly lockFile e83fbced-rtlandcodeschool-jsi-gamelib-git git@github.com:portlandcodeschool/jsi-gamelib.git
+11 verbose lock git@github.com:portlandcodeschool/jsi-gamelib.git /Users/mileshochstein/.npm/e83fbced-rtlandcodeschool-jsi-gamelib-git.lock
+12 verbose addRemoteGit [ 'git@github.com:portlandcodeschool/jsi-gamelib.git',
+12 verbose addRemoteGit   'master' ]
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git Cloning into bare repository '/Users/mileshochstein/.npm/_git-remotes/git-github-com-portlandcodeschool-jsi-gamelib-git-e83fbced'...
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git Permission denied (publickey).
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git fatal: Could not read from remote repository.
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git Please make sure you have the correct access rights
+13 error git clone git@github.com:portlandcodeschool/jsi-gamelib.git and the repository exists.
+14 silly lockFile e83fbced-rtlandcodeschool-jsi-gamelib-git git@github.com:portlandcodeschool/jsi-gamelib.git
+15 silly lockFile e83fbced-rtlandcodeschool-jsi-gamelib-git git@github.com:portlandcodeschool/jsi-gamelib.git
+16 error Error: Command failed: Cloning into bare repository '/Users/mileshochstein/.npm/_git-remotes/git-github-com-portlandcodeschool-jsi-gamelib-git-e83fbced'...
+16 error Permission denied (publickey).
+16 error fatal: Could not read from remote repository.
+16 error
+16 error Please make sure you have the correct access rights
+16 error and the repository exists.
+16 error
+16 error     at ChildProcess.exithandler (child_process.js:648:15)
+16 error     at ChildProcess.emit (events.js:98:17)
+16 error     at maybeClose (child_process.js:756:16)
+16 error     at Socket.<anonymous> (child_process.js:969:11)
+16 error     at Socket.emit (events.js:95:17)
+16 error     at Pipe.close (net.js:465:12)
+17 error If you need help, you may report this *entire* log,
+17 error including the npm and node versions, at:
+17 error     <http://github.com/npm/npm/issues>
+18 error System Darwin 14.0.0
+19 error command "node" "/usr/local/bin/npm" "install" "--save" "git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git"
+20 error cwd /Users/mileshochstein/Documents/Projects/pcs5b
+21 error node -v v0.10.32
+22 error npm -v 1.4.28
+23 error code 128
+24 verbose exit [ 1, true ]

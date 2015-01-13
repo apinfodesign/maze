@@ -1,0 +1,14 @@
+{
+  "name": "pcs5b",
+  "version": "1.0.0",
+  "description": "maze exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"`npm bin` jasmine\""
+  },
+  "author": "mh",
+  "license": "ISC",
+  "dependencies": {
+    "jsi-gamelib": "git+ssh://git@github.com:portlandcodeschool/jsi-gamelib.git"
+  }
+}
