@@ -46,6 +46,9 @@ function giveUserCurrentStatus(arg){
 //	console.log(gamelib.map(require(process.argv[2])));
 	outputMaze();   //display maze every time user gets status update
  	console.log("You are in room: " + currentRoom);  
+
+ 	changeRoomToBeenThereStatus(currentRoom);
+
 	evaluateCurrentPositionForAlerts(currentRoom);   //seems to work!
 };	
 
@@ -88,8 +91,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");  //not sure why this seemed to be necessary.
          		};
 			};
- 			console.log("No NORTH move was possible");
-    		giveUserCurrentStatus(currentRoom);     		
+     		giveUserCurrentStatus(currentRoom);     		
         break;
 
     case "S":
@@ -104,8 +106,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");
  	        	};  
 			}; //END FOR LOOP
- 			console.log("No SOUTH move was possible");
-    		giveUserCurrentStatus(currentRoom);     		
+     		giveUserCurrentStatus(currentRoom);     		
        break;
 
     case "E":
@@ -120,8 +121,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");
          		};
 			}; //END FOR LOOP
- 			console.log("No EAST move was possible");
-    		giveUserCurrentStatus(currentRoom);     		
+ 	 		giveUserCurrentStatus(currentRoom);     		
 
        break;
 
@@ -136,8 +136,7 @@ function checkMovePossible(arg1, arg2){
 				{ //console.log(answer + " is not a doable direction"); 
 				};
 			}; //END FOR LOOP
- 			console.log("No WEST move was possible.");
-    		giveUserCurrentStatus(currentRoom);     		
+     		giveUserCurrentStatus(currentRoom);     		
         break;
 
     default:
@@ -155,5 +154,17 @@ function denyOrUpdate(){
    giveUserCurrentStatus(currentRoom);
 };
 
+function changeRoomToBeenThereStatus(argCurrentRoom){
+	//console.log("change room to been there = currentRoom is "+ currentRoom);
+	for (i=0; i< gameMapIn.rooms.length; i++){
+        	if  ( (gameMapIn.rooms[i].name === currentRoom) )
+        		{ gameMapIn.rooms[i].beenthere = true;
+        		};
+			};
+	//diagnostic list of visited rooms
+	for (i=0; i< gameMapIn.rooms.length; i++){
+        	console.log( gameMapIn.rooms[i].name + " and visited is " + gameMapIn.rooms[i].beenthere );
+        		};
+    };
 
 

@@ -7,70 +7,98 @@
           "east": "B",
           "south": null,
           "west": null,
-          "entrance": "south"
+          "entrance": "south",
+          "beenthere": null
         },
         {
           "name": "B",
           "north": "E",
           "east": "C",
           "south": null,
-          "west": "A"
+          "west": "A",
+          "entrance": "null",
+          "beenthere": true
+
         },
         {
           "name": "C",
           "north": null,
           "east": null,
           "south": null,
-          "west": "B"
+          "west": "B",
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "D",
           "north": "G",
           "east": null,
           "south": "A",
-          "west": null
+          "west": null,
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "E",
           "north": null,
           "east": "F",
           "south": "B",
-          "west": null
+          "west": null,
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "F",
           "north": null,
           "east": null,
           "south": null,
-          "west": "E"
+          "west": "E",
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "G",
           "north": "H",
           "east": null,
           "south": "D",
-          "west": null
+          "west": null,
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "H",
           "north": null,
           "east": "I",
           "south": "G",
-          "west": null
+          "west": null,
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "I",
           "north": null,
           "east": "J",
           "south": null,
-          "west": "H"
+          "west": "H",
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "J",
           "north": null,
           "east": "K",
           "south": null,
-          "west": "I"
+          "west": "I",
+          "entrance": "null",
+          "beenthere": null
+
         },
         {
           "name": "K",
@@ -78,6 +106,8 @@
           "east": null,
           "south": null,
           "west": "J",
+          "entrance": "null",
+          "beenthere": null, 
           "treasure": true
         }
         
