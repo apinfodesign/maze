@@ -35,7 +35,7 @@ console.log("Welcome to the maze.");
 //        checkMovepossible ()
 //           denyOrUpdate ()
 //				1 askUserNextMove()
-//				2 giveUserCurrentPosition()
+//				2 giveUserCurrentStatus()
 /////////////////////////////////////////////
 
 //toop level function call.  Calls all other functions.
