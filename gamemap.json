@@ -17,7 +17,7 @@
           "south": null,
           "west": "A",
           "entrance": "null",
-          "beenthere": true
+          "beenthere": false
 
         },
         {

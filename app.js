@@ -42,7 +42,11 @@ console.log("Welcome to the maze.");
 giveUserCurrentStatus("B");  //assign start status here 
 
 function giveUserCurrentStatus(arg){
-	var currentRoom = arg;    
+	var currentRoom = arg;   
+
+	changeRoomAmThereNowStatus(currentRoom);  //special signal to mark current location in maze
+	//uses "false" on beenthere in gamemap to indicate current location
+
 //	console.log(gamelib.map(require(process.argv[2])));
 	outputMaze();   //display maze every time user gets status update
  	console.log("You are in room: " + currentRoom);  
@@ -159,12 +163,24 @@ function changeRoomToBeenThereStatus(argCurrentRoom){
 	for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) )
         		{ gameMapIn.rooms[i].beenthere = true;
+
         		};
 			};
 	//diagnostic list of visited rooms
-	for (i=0; i< gameMapIn.rooms.length; i++){
-        	console.log( gameMapIn.rooms[i].name + " and visited is " + gameMapIn.rooms[i].beenthere );
-        		};
+	// for (i=0; i< gameMapIn.rooms.length; i++){
+ //        	console.log( gameMapIn.rooms[i].name + " and visited is " + gameMapIn.rooms[i].beenthere );
+ //        		};
     };
 
-
+function changeRoomAmThereNowStatus(argCurrentRoom){
+	//console.log("change room to been there = currentRoom is "+ currentRoom);
+	for (i=0; i< gameMapIn.rooms.length; i++){
+        	if  ( (gameMapIn.rooms[i].name === currentRoom) )
+        		{ gameMapIn.rooms[i].beenthere = false;  //we are using false to signal current location
+        		};
+			};
+	//diagnostic list of visited rooms
+	 // for (i=0; i< gameMapIn.rooms.length; i++){
+  //       	console.log( gameMapIn.rooms[i].name + " FALSE FALSE   " + gameMapIn.rooms[i].beenthere );
+  //        		};
+    };
