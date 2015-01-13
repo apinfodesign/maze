@@ -90,7 +90,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");
          		};
 			};
- 			//console.log("no move was possible");
+ 			console.log("No NORTH move was possible");
     		giveUserCurrentStatus(currentRoom);     		
         break;
 
@@ -106,7 +106,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");
          	};  
 			}; //END FOR LOOP
- 			//console.log("no move was possible");
+ 			console.log("No SOUTH move was possible");
     		giveUserCurrentStatus(currentRoom);     		
        break;
 
@@ -121,7 +121,7 @@ function checkMovePossible(arg1, arg2){
         		//console.log(answer + " is not a doable direction");
          	};
 			}; //END FOR LOOP
- 			//console.log("no move was possible");
+ 			console.log("No EAST move was possible");
     		giveUserCurrentStatus(currentRoom);     		
 
        break;
@@ -138,7 +138,7 @@ function checkMovePossible(arg1, arg2){
 			
 			}; //END FOR LOOP
 
- 		//	console.log("No move was possible.");
+ 			console.log("No WEST move was possible.");
     		giveUserCurrentStatus(currentRoom);     		
     	
          break;
