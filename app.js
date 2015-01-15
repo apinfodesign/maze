@@ -1,5 +1,5 @@
 var gamelib = require("jsi-gamelib");
-var gameMapIn = require("./gamemap.json")
+var gameMapIn = require("./gamemap.json");
 // bring in jsi-gamelib via gamelib above
 
 console.log(gameMapIn.rooms);
@@ -19,7 +19,7 @@ function outputMaze(){
  console.log("");
  console.log(gamelib.map(require(process.argv[2])));
  console.log("");
-};
+}
 
 console.log("Welcome to the maze.");
 
@@ -54,16 +54,16 @@ function giveUserCurrentStatus(arg){
  	changeRoomToBeenThereStatus(currentRoom);
 
 	evaluateCurrentPositionForAlerts(currentRoom);   //seems to work!
-};	
+}
 
 function evaluateCurrentPositionForAlerts(arg){
 	 currentRoom = arg;
      for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ((gameMapIn.rooms[i].treasure === true) && (gameMapIn.rooms[i].name === currentRoom))
-        		{console.log("YOU FOUND THE TREASURE!  O ! M ! G ! YOU WIN! ");  };
-			}; 
+        		{console.log("YOU FOUND THE TREASURE!  O ! M ! G ! YOU WIN! ");  }
+			} 
 	askUserNextMove(currentRoom);
-};
+}
 
 function askUserNextMove(argCurrentRoom){
    rl.question("Which direction to move next? ( N S E W ) ", function(argNextMove) {
@@ -71,7 +71,7 @@ function askUserNextMove(argCurrentRoom){
    //rl.close();   //not necessary to close read line
     checkMovePossible(argNextMove, argCurrentRoom);   //check if requested move is possible
 	});
-};
+}
 
 function checkMovePossible(arg1, arg2){
 	//take current location and figure out if requested move possible
@@ -80,6 +80,7 @@ function checkMovePossible(arg1, arg2){
 	//console.log("entering function <checkMovePossible> answer we are checking is "+ answer);
 	//console.log("currentRoom is " + currentRoom +"  and newCurrentRoom" + newCurrentRoom);
 	
+    var newCurrentRoom;  
 	switch(answer)    //based on user chosen direction do one of four things:
 	{
     case "N":
@@ -87,14 +88,14 @@ function checkMovePossible(arg1, arg2){
         for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) && (gameMapIn.rooms[i].north !== null) )
         		{ 
-         		var newCurrentRoom = gameMapIn.rooms[i].north;  
+         		    newCurrentRoom = gameMapIn.rooms[i].north;  
   			      	giveUserCurrentStatus(newCurrentRoom);     		
        			} 
         	else
         		{
         		//console.log(answer + " is not a doable direction");  //not sure why this seemed to be necessary.
-         		};
-			};
+         		}
+			}
      		giveUserCurrentStatus(currentRoom);     		
         break;
 
@@ -103,13 +104,13 @@ function checkMovePossible(arg1, arg2){
         for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) && (gameMapIn.rooms[i].south !== null) )
         		{ 
-        			var newCurrentRoom = gameMapIn.rooms[i].south;        	
+        			newCurrentRoom = gameMapIn.rooms[i].south; //var newCurrentRoom = gameMapIn.rooms[i].south;        	
         			giveUserCurrentStatus(newCurrentRoom);
-        			}
+        		}
 			else{
         		//console.log(answer + " is not a doable direction");
- 	        	};  
-			}; //END FOR LOOP
+ 	        	}
+			} //END FOR LOOP
      		giveUserCurrentStatus(currentRoom);     		
        break;
 
@@ -117,14 +118,15 @@ function checkMovePossible(arg1, arg2){
     	//console.log("you chose E");
         for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) && (gameMapIn.rooms[i].east !== null) )
-        		{ var newCurrentRoom = gameMapIn.rooms[i].east;         		
-				giveUserCurrentStatus(newCurrentRoom);
+        		{  
+                    newCurrentRoom = gameMapIn.rooms[i].east;         		
+				    giveUserCurrentStatus(newCurrentRoom);
         		}  
 			else
 				{
         		//console.log(answer + " is not a doable direction");
-         		};
-			}; //END FOR LOOP
+         		}
+			} //END FOR LOOP
  	 		giveUserCurrentStatus(currentRoom);     		
 
        break;
@@ -133,13 +135,14 @@ function checkMovePossible(arg1, arg2){
     	//console.log("you chose W");
         for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) && (gameMapIn.rooms[i].west !== null) )
-        		{ var newCurrentRoom = gameMapIn.rooms[i].west; 
-        		giveUserCurrentStatus(newCurrentRoom);
+        		{ 
+                    newCurrentRoom = gameMapIn.rooms[i].west; 
+        		    giveUserCurrentStatus(newCurrentRoom);
 	      		}
 			else
 				{ //console.log(answer + " is not a doable direction"); 
-				};
-			}; //END FOR LOOP
+				}
+			} //END FOR LOOP
      		giveUserCurrentStatus(currentRoom);     		
         break;
 
@@ -151,12 +154,12 @@ function checkMovePossible(arg1, arg2){
  	}
 //	console.log("currentRoom is: "+ currentRoom + "    newCurrentRoom is " + newCurrentRoom );
 	
-};
+}
 
 function denyOrUpdate(){
-   console.log(" Sorry, you must chose N E S or W.")
+   console.log(" Sorry, you must chose N E S or W.");
    giveUserCurrentStatus(currentRoom);
-};
+}
 
 function changeRoomToBeenThereStatus(argCurrentRoom){
 	//console.log("change room to been there = currentRoom is "+ currentRoom);
@@ -164,23 +167,23 @@ function changeRoomToBeenThereStatus(argCurrentRoom){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) )
         		{ gameMapIn.rooms[i].beenthere = true;
 
-        		};
-			};
+        		}
+			}
 	//diagnostic list of visited rooms
 	// for (i=0; i< gameMapIn.rooms.length; i++){
  //        	console.log( gameMapIn.rooms[i].name + " and visited is " + gameMapIn.rooms[i].beenthere );
  //        		};
-    };
+    }
 
 function changeRoomAmThereNowStatus(argCurrentRoom){
 	//console.log("change room to been there = currentRoom is "+ currentRoom);
 	for (i=0; i< gameMapIn.rooms.length; i++){
         	if  ( (gameMapIn.rooms[i].name === currentRoom) )
         		{ gameMapIn.rooms[i].beenthere = false;  //we are using false to signal current location
-        		};
-			};
+        		}
+			}
 	//diagnostic list of visited rooms
 	 // for (i=0; i< gameMapIn.rooms.length; i++){
   //       	console.log( gameMapIn.rooms[i].name + " FALSE FALSE   " + gameMapIn.rooms[i].beenthere );
   //        		};
-    };
+    }

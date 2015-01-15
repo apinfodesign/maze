@@ -63,7 +63,7 @@
         {
           "name": "G",
           "north": "H",
-          "east": null,
+          "east": "M",
           "south": "D",
           "west": null,
           "entrance": "null",
@@ -94,7 +94,7 @@
           "name": "J",
           "north": null,
           "east": "K",
-          "south": null,
+          "south": "N",
           "west": "I",
           "entrance": "null",
           "beenthere": null
@@ -109,7 +109,25 @@
           "entrance": "null",
           "beenthere": null, 
           "treasure": true
-        }
+        },
+        {
+          "name": "M",
+          "north": "I",
+          "east": "N",
+          "south": "E",
+          "west": "G",
+          "entrance": "null",
+          "beenthere": null 
+         },
+        {
+          "name": "N",
+          "north": "J",
+          "east": null,
+          "south": "F",
+          "west": "M",
+          "entrance": "null",
+          "beenthere": null 
+         }
         
       ]
     }
